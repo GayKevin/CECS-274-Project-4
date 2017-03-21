@@ -1,8 +1,15 @@
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * Main Class
+ */
 public class Main {
 
+    /**
+     * Main Function
+     * @param args
+     */
     public static void main(String[] args) {
         Boolean isWorking = true;
         LinkedList list = new LinkedList();
@@ -52,6 +59,10 @@ public class Main {
         }
     }
 
+    /**
+     * Function to call the Update Contact
+     * @param list to update
+     */
     private static void updateContact(LinkedList list){
         boolean isWorking = true;
         Scanner sc = new Scanner(System.in);
@@ -65,6 +76,10 @@ public class Main {
         System.out.println(list.toString());
     }
 
+    /**
+     * Search Menu
+     * @param list to search
+     */
     private static void searchContact(LinkedList list){
         boolean isWorking = true;
         Scanner sc = new Scanner(System.in);
@@ -91,6 +106,10 @@ public class Main {
         }
     }
 
+    /**
+     * Remove contact menu
+     * @param list to remove
+     */
     private static void removeContact(LinkedList list) {
         boolean isWorking = true;
         Scanner sc = new Scanner(System.in);
@@ -115,6 +134,11 @@ public class Main {
         }
     }
 
+    /**
+     * Remove contact Menu
+     * @param list to remove
+     * @param sc Scanner
+     */
     private static void removeByLastAndFirstName(LinkedList list, Scanner sc){
         String firstName = "";
         String lastName = "";

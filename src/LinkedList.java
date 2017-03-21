@@ -58,14 +58,18 @@ public class LinkedList {
     private Node last;
 
     /**
-     * LinkedList class
+     * Default Constructor LinkedList class
      */
     LinkedList() {
         this.first = null;
         this.last = null;
     }
 
-    LinkedList(LinkedList list){
+    /**
+     * Clone a List to a new List
+     * @param list to clone
+     */
+    private LinkedList(LinkedList list){
         for (int i = 0; i < list.size(); i++){
             String str = "";
             str += list.getNode(i).data.getFirstName() + ",";
@@ -115,6 +119,11 @@ public class LinkedList {
         }
     }
 
+    /**
+     * Return the node from the Index
+     * @param index that you want
+     * @return the Node of the Index
+     */
     Node getNode(int index){
         if( index < 0 || index > size()){
             System.out.println("Index out of bounds.");
@@ -131,7 +140,7 @@ public class LinkedList {
     /**
      * Set new Circle Class from Index
      * @param i index
-     * @param s
+     * @param s  Contact to set
      */
     public void set(int i, Contact s) {
         if( i < 0 || i > size() ) {
@@ -143,7 +152,7 @@ public class LinkedList {
     }
 
     /**
-     * Return string
+     * Return the List to a string
      * @return string
      */
     public String toString() {
@@ -173,6 +182,10 @@ public class LinkedList {
         }
     }
 
+    /**
+     * Remove the Node from an index
+     * @param index to delete
+     */
     void remove(int index) {
         Node n = getNode(index);
         if(n == null){
@@ -195,6 +208,11 @@ public class LinkedList {
         }
     }
 
+    /**
+     * Remove From First And Last Name
+     * @param firstName to find
+     * @param lastName to find
+     */
     void removeByFirstAndLastName(String firstName, String lastName){
         if (this.first.data.getFirstName().equals(firstName) && this.first.data.getLastName().equals(lastName)) {
             this.first = this.first.next;
@@ -211,6 +229,11 @@ public class LinkedList {
         }
     }
 
+    /**
+     * Find from Last Name
+     * @param lastName to find
+     * @return a List of Contact
+     */
     LinkedList searchByLastName(String lastName){
         LinkedList listLastName = new LinkedList();
 
@@ -229,6 +252,11 @@ public class LinkedList {
         return listLastName;
     }
 
+    /**
+     * Find from Zip Code
+     * @param zipCode to find
+     * @return a List of Contact
+     */
     LinkedList searchByZipCode(String zipCode){
         LinkedList listZipCode = new LinkedList();
 
@@ -247,6 +275,10 @@ public class LinkedList {
         return listZipCode;
     }
 
+    /**
+     * Update Contact
+     * @param index to update
+     */
     void updateContact(int index){
         Scanner sc = new Scanner(System.in);
         if (getNode(index) == null)
@@ -272,6 +304,11 @@ public class LinkedList {
             getNode(index).data.setZipCode(sc.nextLine());
     }
 
+    /**
+     * Sorted the List
+     * @param list to sort
+     * @return sorted list
+     */
     LinkedList sortedList(LinkedList list){
         LinkedList sorted = new LinkedList(list);
 
@@ -291,6 +328,9 @@ public class LinkedList {
         return sorted;
     }
 
+    /**
+     * Write in a file all the contact of the list
+     */
     void writeInFile(){
         BufferedWriter bw = null;
         FileWriter fw = null;

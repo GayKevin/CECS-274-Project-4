@@ -1,8 +1,4 @@
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
-import sun.security.jca.GetInstance;
-
 import java.util.Scanner;
-
 /**
  * Created by Kevin Gay on 20/03/2017.
  */
@@ -19,11 +15,27 @@ public class Contact {
      * First of the Contact
      */
     private String firstName;
+    /**
+     * Phone number of the Contact
+     */
     private String phoneNumber;
+    /**
+     * Adresse of the Contact
+     */
     private String address;
+    /**
+     * City of the contact
+     */
     private String city;
+    /**
+     * Zip Code of the Contact
+     */
     private String zipCode;
 
+    /**
+     * Default Constructor to create a contact
+     * @param contact is the string from a file
+     */
     Contact(String contact){
         String[] split = contact.split(",");
         this.firstName = split[0];
@@ -34,6 +46,9 @@ public class Contact {
         this.zipCode = split[5];
     }
 
+    /**
+     * Create a Contact from user input
+     */
     Contact(){
         addContact();
     }
@@ -64,75 +79,133 @@ public class Contact {
             this.city = sc.nextLine();
     }
 
-    public String getLastName() {
+    /**
+     * Get the Last name
+     * @return String
+     */
+    String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    /**
+     * set The Last Name
+     * @param lastName to set
+     */
+    void setLastName(String lastName) {
         if(!checkIfEmpty(lastName))
             return;
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
+    /**
+     * Get the First Name
+     * @return String
+     */
+    String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    /**
+     * Set the First Name
+     * @param firstName to set
+     */
+    void setFirstName(String firstName) {
         if(!checkIfEmpty(firstName))
             return;
 
         this.firstName = firstName;
     }
 
-    public String getPhoneNumber() {
+    /**
+     * Get the phone number
+     * @return String
+     */
+    String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    /**
+     * Set the Phone Nuber
+     * @param phoneNumber to set
+     */
+    void setPhoneNumber(String phoneNumber) {
         if(!checkIfEmpty(phoneNumber))
             return;
 
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress() {
+    /**
+     * Return the address
+     * @return String
+     */
+    String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    /**
+     * Set the address
+     * @param address to set
+     */
+    void setAddress(String address) {
         if(!checkIfEmpty(address))
             return;
 
         this.address = address;
     }
 
-    public String getCity() {
+    /**
+     * Get the city
+     * @return String
+     */
+    String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    /**
+     * Set the city
+     * @param city to set
+     */
+    void setCity(String city) {
         if(!checkIfEmpty(city))
             return;
 
         this.city = city;
     }
 
-    public String getZipCode() {
+    /**
+     * Get the zip code
+     * @return String
+     */
+    String getZipCode() {
         return zipCode;
     }
 
-    private boolean checkIfEmpty(String str){
-        return !str.equals("");
-    }
-
-    public void setZipCode(String zipCode) {
+    /**
+     * Set the Zip Code
+     * @param zipCode to set
+     */
+    void setZipCode(String zipCode) {
         if(!checkIfEmpty(zipCode))
             return;
 
         this.zipCode = zipCode;
     }
 
+    /**
+     * Check if the String is empty
+     * @param str String
+     * @return True or False
+     */
+    private boolean checkIfEmpty(String str){
+        return !str.equals("");
+    }
+
+    /**
+     * Check if the Two Object are equals
+     * @param obj to check
+     * @return True or False
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Contact){
@@ -145,7 +218,12 @@ public class Contact {
         return super.equals(obj);
     }
 
-    public int compareTo(Contact contact){
+    /**
+     * Compare two Object
+     * @param contact to Compary
+     * @return number of difference
+     */
+    int compareTo(Contact contact){
         int compareTo = this.firstName.compareTo(contact.getFirstName());
 
         if(compareTo == 0)
@@ -154,6 +232,10 @@ public class Contact {
             return compareTo;
     }
 
+    /**
+     * Return the Contact Object into String
+     * @return String
+     */
     @Override
     public String toString(){
         String str = "";
