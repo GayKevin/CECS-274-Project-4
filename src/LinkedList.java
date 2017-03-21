@@ -213,7 +213,7 @@ public class LinkedList {
      * @param firstName to find
      * @param lastName to find
      */
-    void removeByFirstAndLastName(String firstName, String lastName){
+    void remove(String firstName, String lastName){
         if (this.first.data.getFirstName().equals(firstName) && this.first.data.getLastName().equals(lastName)) {
             this.first = this.first.next;
             return;
@@ -234,7 +234,7 @@ public class LinkedList {
      * @param lastName to find
      * @return a List of Contact
      */
-    LinkedList searchByLastName(String lastName){
+    LinkedList search(String lastName){
         LinkedList listLastName = new LinkedList();
 
         if (this.first.data.getLastName().equals(lastName)) {
@@ -249,6 +249,9 @@ public class LinkedList {
             tmp = tmp.next;
         }
 
+        if (listLastName.isEmpty())
+            System.out.println("Any " + lastName + " has been found");
+
         return listLastName;
     }
 
@@ -257,20 +260,24 @@ public class LinkedList {
      * @param zipCode to find
      * @return a List of Contact
      */
-    LinkedList searchByZipCode(String zipCode){
+    LinkedList search(int zipCode){
+        String code = String.valueOf(zipCode);
         LinkedList listZipCode = new LinkedList();
 
-        if (this.first.data.getZipCode().equals(zipCode)) {
+        if (this.first.data.getZipCode().equals(code)) {
             listZipCode.add(this.first.data);
         }
 
         Node tmp = this.first;
 
         while (tmp.next != null){
-            if ((tmp.next).data.getZipCode().equals(zipCode))
+            if ((tmp.next).data.getZipCode().equals(code))
                 listZipCode.add(tmp.next.data);
             tmp = tmp.next;
         }
+
+        if (listZipCode.isEmpty())
+            System.out.println("Any " + zipCode+ " has been found");
 
         return listZipCode;
     }
@@ -300,7 +307,7 @@ public class LinkedList {
         if (sc.hasNextLine())
             getNode(index).data.setCity(sc.nextLine());
         System.out.print("Type the zip code["+ getNode(index).data.getZipCode() + "]:");
-        if (sc.hasNextLine())
+        if (sc.hasNextInt())
             getNode(index).data.setZipCode(sc.nextLine());
     }
 

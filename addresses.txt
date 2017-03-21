@@ -5,14 +5,11 @@ Peter,Griffin,555-2315,31 Spooner Street,Quahog,50332
 Montgomery,Burns,555-9809,1000 Mammon Lane,Springfield,90122
 Felix,Unger,555-4324,1049 Park Avenue,New York,10101
 Harriet,Jones,20 7925 0918,10 Downing Street,London,19303
-Montgomery,Burns,555-9809,1000 Mammon Lane,Springfield,90122
 Sherlock,Holmes,207 224 3688,221 Baker Street,London,19303
 Spongebob,Squarepants,555-8942,124 Conch Street,Bikini Bottom,10022
 Elwood,Blues,555-7778,1060 West Addison Street,Chicago,99300
-Montgomery,Burns,555-9809,1000 Mammon Lane,Springfield,90122
 Ned,Flanders,555-4983,740 Evergreen Terrace,Springfield,90122
 Homer,Simpson,555-9802,742 Evergreen Terrace,Springfield,90122
-Montgomery,Burns,555-9809,1000 Mammon Lane,Springfield,90122
 Hank,Hill,555-9834,84 Rainey Street,Arien,50667
 Ralph,Kramden,555-4252,328 Chauncey Street,Brooklyn,10101
 Jack,Tripper,555-8972,834 Ocean Vista Avenue,Santa Monica,90301

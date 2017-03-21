@@ -46,8 +46,7 @@ public class Main {
                             System.out.println("You have " + list.size() + " contacts");
                             break;
                         case "f":
-                            list.sortedList(list);
-                            System.out.println(list.toString());
+                            System.out.println(list.sortedList(list).toString());
                             break;
                         case "q":
                             isWorking = false;
@@ -72,8 +71,6 @@ public class Main {
 
         if (sc.hasNextInt())
             list.updateContact(sc.nextInt());
-
-        System.out.println(list.toString());
     }
 
     /**
@@ -93,12 +90,12 @@ public class Main {
                     case "a":
                         System.out.print("Enter the last name: ");
                         if (sc.hasNextLine())
-                            System.out.println(list.searchByLastName(sc.nextLine()).toString());
+                            System.out.println(list.search(sc.nextLine()).toString());
                         break;
                     case "b":
                         System.out.print("Enter the zip code: ");
                         if (sc.hasNextInt())
-                            System.out.println(list.searchByZipCode(sc.nextLine()).toString());
+                            System.out.println(list.search(sc.nextInt()).toString());
                         break;
                 }
                 isWorking = false;
@@ -151,7 +148,7 @@ public class Main {
         if(sc.hasNextLine())
             lastName = sc.nextLine();
 
-        list.removeByFirstAndLastName(firstName, lastName);
+        list.remove(firstName, lastName);
     }
 
     /**
