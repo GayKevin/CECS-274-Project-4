@@ -224,10 +224,10 @@ public class Contact {
      * @return number of difference
      */
     int compareTo(Contact contact){
-        int compareTo = this.firstName.compareTo(contact.getFirstName());
+        int compareTo = this.lastName.compareTo(contact.getLastName());
 
         if(compareTo == 0)
-            return this.lastName.compareTo(contact.getLastName());
+            return this.firstName.compareTo(contact.getFirstName());
         else
             return compareTo;
     }

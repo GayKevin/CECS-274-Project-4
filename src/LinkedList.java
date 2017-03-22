@@ -323,7 +323,7 @@ public class LinkedList {
         for (int i = 0; i < sorted.size(); i++ ) {
             Node node = sorted.first;
             Node next = node.next;
-            for (int j = 0; j < sorted.size() - 1; j++) {
+            for (int index = 0; index < sorted.size() - 1; index++) {
                 if (node.getData().compareTo(next.getData()) > 0) {
                     Contact tmp = node.data;
                     node.data = next.data;
