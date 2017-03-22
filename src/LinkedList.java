@@ -188,6 +188,7 @@ public class LinkedList {
      */
     void remove(int index) {
         Node n = getNode(index);
+
         if(n == null){
             System.out.println("The node doesn't exit");
             return;

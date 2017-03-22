@@ -121,6 +121,7 @@ public class Main {
                         removeByLastAndFirstName(list, sc);
                         break;
                     case "b":
+                        System.out.print(list.toString());
                         System.out.print("Enter the index you want to delete: ");
                         if (sc.hasNextInt())
                             list.remove(sc.nextInt());
