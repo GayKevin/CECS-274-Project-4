@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class LinkedList {
     private static class Node {
         /**
-         * Circle data class
+         * Contact data class
          */
         private Contact data;
         /**
@@ -22,7 +22,7 @@ public class LinkedList {
 
         /**
          * Init Node Class
-         * @param s Circle parm
+         * @param s Contact parm
          */
         public Node(Contact s) {
             this.data = s;
@@ -31,7 +31,7 @@ public class LinkedList {
 
         /**
          * Create a Node Class with the next Node
-         * @param s Circle Class
+         * @param s Contact Class
          * @param n Noce next class6
          */
         public Node(Contact s, Node n) {
@@ -106,9 +106,9 @@ public class LinkedList {
     }
 
     /**
-     * get the Circle class from index
+     * get the Contact class from index
      * @param index index
-     * @return Circle
+     * @return Contact
      */
     Contact get(int index) {
         if( index < 0 || index > size()){
@@ -138,7 +138,7 @@ public class LinkedList {
     }
 
     /**
-     * Set new Circle Class from Index
+     * Set new Contact Class from Index
      * @param i index
      * @param s  Contact to set
      */
@@ -168,8 +168,8 @@ public class LinkedList {
     }
 
     /**
-     * Add new Circle class
-     * @param s Circle class
+     * Add new Contact class
+     * @param s Contact class
      */
     void add(Contact s) {
         if(isEmpty()) {
@@ -179,6 +179,28 @@ public class LinkedList {
             Node n = new Node(s);
             this.last.next = n;
             this.last = n;
+        }
+    }
+
+    /**
+     * Add new Contact class
+     * @param s Contact class
+     */
+    void add(Contact s, int index) {
+        if(isEmpty()) {
+            this.first = new Node(s);
+            this.last = first;
+        } else {
+            Node n = new Node(s);
+            Node node = this.first;
+
+            for (int i = 0; i < size(); i++) {
+                if(i == index) {
+                    getNode(i).next = node.next;
+                    node.next = getNode(i);
+                }
+                node = node.next;
+            }
         }
     }
 
