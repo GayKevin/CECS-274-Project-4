@@ -76,7 +76,7 @@ public class Contact {
             this.city = sc.nextLine();
         System.out.print("Add the Zip Code : ");
         if (sc.hasNextLine())
-            this.city = sc.nextLine();
+            this.zipCode = sc.nextLine();
     }
 
     /**
